@@ -5,11 +5,11 @@ import calculateWinner from '../common/calculateWinner';
 
 import './../game.css';
 
-const Board = () => {
+const Board = ({xIsNext, squares, onPlay}) => {
 
 
-    const [squares, setSquares] = useState(Array(9).fill(null));
-    const [xIsNext, setXIsNext] = useState(true);
+    // const [squares, setSquares] = useState(Array(9).fill(null));
+    // const [xIsNext, setXIsNext] = useState(true);
     const onSquareClick = (index) => {
 
         if(squares[index]){
@@ -24,10 +24,12 @@ const Board = () => {
             nextSquares[index] = "O";
         }
 
-        setXIsNext(!xIsNext);
+        onPlay(nextSquares);
+
+        // setXIsNext(!xIsNext);
 
 
-        setSquares(nextSquares);
+        // setSquares(nextSquares);
     };
     return (
         <>
