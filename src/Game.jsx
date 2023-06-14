@@ -43,7 +43,7 @@ function Game() {
                     setHistoryIndex(index);
                   }}
                 >
-                  Go to Game {index === 0 ? 'start' : index}
+                  Go to Play {index === 0 ? 'start' : index}
                 </button>
               </li>
             })
